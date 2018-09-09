@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="center-title">
+      Courses
+    </ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="addCourse()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button full style="height: 25%" *ngFor="let course of courses | async" (click)="courseClicked(course)">
+    {{course.name}} </button>
+</ion-content>
